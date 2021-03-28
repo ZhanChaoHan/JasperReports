@@ -2,11 +2,8 @@ package com.jachs.jr;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -14,6 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import com.jasper.bean.Fields;
@@ -31,7 +29,11 @@ import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
  *
  */
 public class JrTest {
-
+	//初始化
+	@Before
+	public void init() {
+		System.setProperty("net.sf.jasperreports.properties", "E:\\gitPath\\JasperReports\\JasperReports\\src\\main\\java\\net.sf.jasperreports.properties");
+	}
 	@Test
 	public void test() throws Exception {
 		// map作为报表数据源
